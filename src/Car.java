@@ -12,16 +12,26 @@ public class Car {
         if (brand == null) {
             this.brand = "default";
         } else { this.brand = brand;}
+
         if (model == null) {
             this.model = "default";
         } else{ this.model = model;}
 
-        this.date = date;
-        this.color = color;
+        if (date == 0) {
+            this.date = 2000;
+        } else { this.date = date;}
+
+        if (color == null) {
+            this.color = "белый";
+        } else { this.color = color;}
+
         if (country == null) {
             this.country = "default";
         } else { this.country = country;}
-        this.sizeEngine = sizeEngine;
+
+        if (sizeEngine == 0) {
+            this.sizeEngine = 1.5;
+        } else { this.sizeEngine = sizeEngine;}
     }
 
     void information() {
