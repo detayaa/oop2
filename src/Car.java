@@ -9,11 +9,11 @@ public class Car {
 
 
     Car(String brand,String model, int date, String country, String color, double sizeEngine) {
-        if (brand == null) {
+        if (brand == null || brand.isEmpty()) {
             this.brand = "default";
         } else { this.brand = brand;}
 
-        if (model == null) {
+        if (model == null || model.isEmpty()) {
             this.model = "default";
         } else{ this.model = model;}
 
@@ -21,11 +21,11 @@ public class Car {
             this.date = 2000;
         } else { this.date = date;}
 
-        if (color == null) {
+        if (color == null || color.isEmpty()) {
             this.color = "белый";
         } else { this.color = color;}
 
-        if (country == null) {
+        if (country == null || country.isEmpty()) {
             this.country = "default";
         } else { this.country = country;}
 
