@@ -7,7 +7,7 @@ package transport;
          String color;
          int maxSpeed;
 
-        public Transport(String brand, String model, int year, String country, String color) {
+        public Transport(String brand, String model, int date, String country, String color) {
             if (brand == null || brand.isEmpty()) {
                 this.brand = "default";
             } else {

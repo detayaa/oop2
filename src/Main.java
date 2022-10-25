@@ -1,3 +1,4 @@
+import transport.Bus;
 import transport.Car;
 import transport.Transport;
 import transport.Train;
@@ -27,6 +28,9 @@ public class Main {
         lastochka.informationTrain();
         Train leningradskiy = new Train("Ленинград", "D-125",2019,"России",270,"Ленинградского вокзала","Ленинград-Пассажирский",1700,8);
         leningradskiy.informationTrain();
+
+        Bus first = new Bus("Mersedes","dn",2000,"Germany","yellow");
+        first.bus();
 
 
 
