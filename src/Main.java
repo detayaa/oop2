@@ -1,8 +1,10 @@
 import transport.Car;
+import transport.Transport;
+import transport.Train;
 
 public class Main {
     public static void main(String[] args) {
-        new Car.Insurance(2022,132,123);
+         new Car.Insurance(2022,132,123);
 
 
         Car lada = new Car("Lada", "Granta", 2015, "России", "желтого", 1.7,"не знаю","какойто","123",4,"летняя");
@@ -20,6 +22,12 @@ public class Main {
         Car hyundai = new Car("Hyundai", "Avante", 2016, "Южной Корее", "оранжевого", 1.6,"не знаю","какойто","123",4,"летняя");
         hyundai.information();
         hyundai.setInsurance();
+
+        Train lastochka = new Train("Ласточка", "В-901", 2011,"России",301,"Белорусского вокзала", "Минск-Пассажирский", 3500,11);
+        lastochka.informationTrain();
+        Train leningradskiy = new Train("Ленинград", "D-125",2019,"России",270,"Ленинградского вокзала","Ленинград-Пассажирский",1700,8);
+        leningradskiy.informationTrain();
+
 
 
     }

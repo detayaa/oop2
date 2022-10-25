@@ -1,52 +1,23 @@
 package transport;
-
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Objects;
 
 
-public class Car {
-    private String brand;
-    private String model;
+public class Car extends Transport {
+
     private double sizeEngine;
-    private String color;
-    private int date;
-    private String country;
     private String transmission;
-    private String typeBody;
+    private final String typeBody;
     private String number;
-    private int countSeats;
+    private final int countSeats;
     private String tire;
     private Key key;
     private Insurance insurance;
 
 
     public Car(String brand, String model, int date, String country, String color, double sizeEngine, String transmission, String typeBody, String number, int countSeats, String tire) {
-        if (brand == null || brand.isEmpty()) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
-        }
-
-        if (model == null || model.isEmpty()) {
-            this.model = "default";
-        } else {
-            this.model = model;
-        }
-
-        if (date == 0) {
-            this.date = 2000;
-        } else {
-            this.date = date;
-        }
-
-        this.setColor(color);
-
-        if (country == null || country.isEmpty()) {
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
+        super(brand,model,date,country,color);
 
         this.setSizeEngine(sizeEngine);
 
@@ -80,8 +51,8 @@ public class Car {
     }
 
     public static class Key {
-        private String remoteStart;
-        private String keylessAccess;
+        private final String remoteStart;
+        private final String keylessAccess;
 
         public String getRemoteStart() {
             return remoteStart;
@@ -147,8 +118,6 @@ public class Car {
 
             if (number % 1000000000 != number) {
                 System.out.println("Номер страховки некорректный");
-            } else {
-                this.number = number;
             }
         }
     }
@@ -156,6 +125,7 @@ public class Car {
 
     public void information() {
         System.out.println(brand + " " + model + ", " + date + " год выпуска, сборка в " + country + ", " + color + " цвета, объем двигателя - " + sizeEngine + " л. Коробка передач - " + transmission + ", тип кузова - " + typeBody + ", номер " + number + ". Шины - " + tire);
+
     }
 
     public double getSizeEngine() {
@@ -170,17 +140,6 @@ public class Car {
         }
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null || color.isEmpty()) {
-            this.color = "белый";
-        } else {
-            this.color = color;
-        }
-    }
 
     public String getTransmission() {
         return transmission;
@@ -207,20 +166,8 @@ public class Car {
 
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public int getDate() {
         return date;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public String getTypeBody() {
@@ -240,7 +187,7 @@ public class Car {
     }
 
     public void setInsurance() {
-        if (insurance == null) {
+        if (insurance != null) {
             this.insurance = insurance;
         }
 
