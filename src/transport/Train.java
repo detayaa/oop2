@@ -79,6 +79,11 @@ public class Train extends Transport {
     }
 
     @Override
+    public void refil() {
+        System.out.println("Заправлять дизелем");
+    }
+
+    @Override
     public int getMaxSpeed() {
         return super.getMaxSpeed();
     }

@@ -1,5 +1,5 @@
 package transport;
-    public class Transport {
+    public abstract class Transport {
         String brand;
          String model;
          int date;
@@ -66,9 +66,38 @@ package transport;
 
 
         }
+        public Transport(String brand, String model, int date, String country, String color,int maxSpeed) {
+            if (brand == null || brand.isEmpty()) {
+                this.brand = "default";
+            } else {
+                this.brand = brand;
+            }
 
+            if (model == null || model.isEmpty()) {
+                this.model = "default";
+            } else {
+                this.model = model;
+            }
 
+            if (date == 0) {
+                this.date = 2000;
+            } else {
+                this.date = date;
+            }
 
+            this.setColor(color);
+
+            if (country == null || country.isEmpty()) {
+                this.country = "default";
+            } else {
+                this.country = country;
+            }
+            if (maxSpeed != 0) {
+                this.maxSpeed = maxSpeed;
+            } else { this.maxSpeed = 100;}
+        }
+
+        public abstract void refil();
 
 
 
