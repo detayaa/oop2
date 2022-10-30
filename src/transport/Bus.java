@@ -1,16 +1,39 @@
 package transport;
 
-public class Bus extends Transport{
-    public Bus(String brand, String model, int date, String country, String color,int maxSpeed) {
-        super(brand, model, date, country, color, maxSpeed);
+public class Bus extends Transport implements Competing{
+    public Bus(String brand, String model, double sizeEngine) {
+        super(brand, model,sizeEngine );
+    }
+
+    public void information() {
+        System.out.println("Марка автобуса - " + brand + ", модель - " + model + ", объем двигателя - " + sizeEngine);
     }
 
     @Override
-    public void refil() {
-        System.out.println("Заправлять дизелем или бензином на заправке");
+    public void go() {
+        super.go();
     }
 
-    public void bus() {
-        System.out.println("Марка автобуса - " + brand + ", модель - " + model + ", год производства - " + date + ", цвет - " + color + ", максимальная скорость - " + maxSpeed);
+    @Override
+    public void finish() {
+        super.finish();
+    }
+
+
+    @Override
+    public void pitStop() {
+        System.out.println("Пит-Стоп");
+
+    }
+
+    @Override
+    public void bestTime() {
+        System.out.println("Лучшее время - 4:23");
+    }
+
+    @Override
+    public void maxSpeed() {
+        System.out.println("Максимальная скорость - 178");
+
     }
 }

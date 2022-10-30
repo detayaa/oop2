@@ -1,46 +1,87 @@
-import transport.Bus;
-import transport.Car;
-import transport.Transport;
-import transport.Train;
+import transport.*;
+//import transport.Train;
 
 public class Main {
     public static void main(String[] args) {
-         new Car.Insurance(2022,132,123);
-
-
-        Car lada = new Car("Lada", "Granta", 2015, "России", "желтого", 1.7,"не знаю","какойто","123",4,"летняя");
-        lada.information();
-        lada.setInsurance();
-        lada.refil();
-        Car audi = new Car("Audi", "A8 50 L TDI quattro", 2020, "Германии", "черного", 3.0,"не знаю","какойто","123",4,"летняя");
-        audi.information();
-        audi.setInsurance();
-        audi.refil();
-        Car bmw = new Car("BMW", "Z8", 2021, "Германии", "черного", 2.4,"не знаю","какойто","123",4,"летняя");
-        bmw.information();
-        bmw.setInsurance();
-        bmw.refil();
-        Car kia = new Car("Kia", "Sportage 4-го поколения", 2018, "Южной Корее", "красного", 2.4,"не знаю","какойто","123",4,"летняя");
+        Car ferrari = new Car("Ferrari", "488", 3.9);
+        ferrari.information();
+        ferrari.maxSpeed();
+        ferrari.bestTime();
+        ferrari.pitStop();
+        Car kia = new Car("Kia", "Sportage", 2);
         kia.information();
-        kia.setInsurance();
-        kia.refil();
-        Car hyundai = new Car("Hyundai", "Avante", 2016, "Южной Корее", "оранжевого", 1.6,"не знаю","какойто","123",4,"летняя");
-        hyundai.information();
-        hyundai.setInsurance();
-        hyundai.refil();
+        kia.maxSpeed();
+        kia.bestTime();
+        kia.pitStop();
+        Car honda = new Car("Honda", "CR-V", 2.4);
+        honda.information();
+        honda.maxSpeed();
+        honda.bestTime();
+        honda.pitStop();
+        Car mazda = new Car("Mazda", "CX-5", 2);
+        mazda.information();
+        mazda.maxSpeed();
+        mazda.bestTime();
+        mazda.pitStop();
+        Bus maz = new Bus("Maz", "203", 6.37);
+        maz.information();
+        maz.maxSpeed();
+        maz.bestTime();
+        maz.pitStop();
+        Bus neman = new Bus("Neman", "4202", 3.0);
+        neman.information();
+        neman.maxSpeed();
+        neman.bestTime();
+        neman.pitStop();
+        Bus volvo = new Bus("Volvo", "7900", 2.4);
+        volvo.information();
+        volvo.maxSpeed();
+        volvo.bestTime();
+        volvo.pitStop();
+        Bus paz = new Bus("Paz", "3010", 2.5);
+        paz.information();
+        paz.maxSpeed();
+        paz.bestTime();
+        paz.pitStop();
+        Truck mercedes = new Truck("Mercedes Benz", "Actros", 15.6);
+        mercedes.information();
+        mercedes.maxSpeed();
+        mercedes.bestTime();
+        mercedes.pitStop();
+        Truck man = new Truck("Man", "TGX", 12.4);
+        man.information();
+        man.maxSpeed();
+        man.bestTime();
+        man.pitStop();
+        Truck scania = new Truck("Scania", "Super", 13);
+        scania.information();
+        scania.maxSpeed();
+        scania.bestTime();
+        scania.pitStop();
+        Truck tatra = new Truck("Tatra", "T163", 13);
+        tatra.information();
+        tatra.maxSpeed();
+        tatra.bestTime();
+        tatra.pitStop();
 
-        Train lastochka = new Train("Ласточка", "В-901", 2011,"России",301,"Белорусского вокзала", "Минск-Пассажирский", 3500,11);
-        lastochka.informationTrain();
-        lastochka.refil();
-        Train leningradskiy = new Train("Ленинград", "D-125",2019,"России",270,"Ленинградского вокзала","Ленинград-Пассажирский",1700,8);
-        leningradskiy.informationTrain();
-        leningradskiy.refil();
 
-        Bus bus = new Bus("Mersedes","dn",2000,"Germany","yellow", 120);
-        bus.bus();
-        bus.refil();
+        Driver<Car> smith = new Driver<>("Smith", true, 5);
+        smith.drive(kia);
+        smith.start();
+        smith.stop();
+        smith.refil();
 
+        Driver<Bus> carl = new Driver<>("Carl", true, 3);
+        carl.drive(paz);
+        carl.start();
+        carl.start();
+        carl.refil();
 
+        Driver<Truck> harry = new Driver<>("Harry", true, 6);
+        harry.drive(scania);
+        harry.start();
+        harry.stop();
+        harry.refil();
 
 
     }

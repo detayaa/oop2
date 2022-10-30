@@ -2,12 +2,12 @@ package transport;
     public abstract class Transport {
         String brand;
          String model;
-         int date;
-         String country;
-         String color;
-         int maxSpeed;
+        double sizeEngine;
 
-        public Transport(String brand, String model, int date, String country, String color) {
+
+
+
+        public Transport(String brand, String model, double sizeEngine) {
             if (brand == null || brand.isEmpty()) {
                 this.brand = "default";
             } else {
@@ -19,119 +19,20 @@ package transport;
             } else {
                 this.model = model;
             }
-
-            if (date == 0) {
-                this.date = 2000;
+            if (sizeEngine != 0) {
+                this.sizeEngine = sizeEngine;
             } else {
-                this.date = date;
-            }
-
-            this.setColor(color);
-
-            if (country == null || country.isEmpty()) {
-                this.country = "default";
-            } else {
-                this.country = country;
+                this.sizeEngine = 3;
             }
         }
-        public Transport(String brand, String model, int date, String country, int maxSpeed) {
-            if (brand == null || brand.isEmpty()) {
-                this.brand = "default";
-            } else {
-                this.brand = brand;
-            }
-            if (model == null || model.isEmpty()) {
-                this.model = "default";
-            } else {
-                this.model = model;
-            }
-
-            if (date == 0) {
-                this.date = 2000;
-            } else {
-                this.date = date;
-            }
-
-            this.setColor(color);
-
-            if (country == null || country.isEmpty()) {
-                this.country = "default";
-            } else {
-                this.country = country;
-            }
-            if (maxSpeed != 0) {
-                this.maxSpeed = maxSpeed;
-            } else { this.maxSpeed = 100;}
 
 
-
-        }
-        public Transport(String brand, String model, int date, String country, String color,int maxSpeed) {
-            if (brand == null || brand.isEmpty()) {
-                this.brand = "default";
-            } else {
-                this.brand = brand;
-            }
-
-            if (model == null || model.isEmpty()) {
-                this.model = "default";
-            } else {
-                this.model = model;
-            }
-
-            if (date == 0) {
-                this.date = 2000;
-            } else {
-                this.date = date;
-            }
-
-            this.setColor(color);
-
-            if (country == null || country.isEmpty()) {
-                this.country = "default";
-            } else {
-                this.country = country;
-            }
-            if (maxSpeed != 0) {
-                this.maxSpeed = maxSpeed;
-            } else { this.maxSpeed = 100;}
+        public void go() {
+            System.out.println("Начать");
         }
 
-        public abstract void refil();
-
-
-
-
-        public String getColor() {
-            return color;
-        }
-
-        public void setColor(String color) {
-            if (color == null || color.isEmpty() || color.isBlank()) {
-                this.color = "белый";
-            } else {
-                this.color = color;
-            }
-
-        }
-
-        public int getMaxSpeed() {
-            return maxSpeed;
-        }
-
-        public void setMaxSpeed(int maxSpeed) {
-            if (maxSpeed != 0) {
-                this.maxSpeed = maxSpeed;
-            } else this.maxSpeed = 60;}
-
-
-
-        public int getYear() {
-            return date;
-        }
-
-        public String getCountry() {
-            return country;
+        public void finish() {
+            System.out.println("Закончить");
         }
 
         public String getBrand() {
@@ -140,6 +41,16 @@ package transport;
 
         public String getModel() {
             return model;
+        }
+        public double getSizeEngine() {
+            return sizeEngine;
+        }
+        public void setSizeEngine(double sizeEngine) {
+            if (sizeEngine == 0) {
+                this.sizeEngine = 1.5;
+            } else {
+                this.sizeEngine = sizeEngine;
+            }
         }
     }
 
