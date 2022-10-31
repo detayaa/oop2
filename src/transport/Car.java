@@ -2,17 +2,12 @@ package transport;
 
 
 public class Car extends Transport implements Competing {
-
-    public static final String PIT_STOP = "PIT STOP";
-
-
     public Car(String brand, String model, double sizeEngine) {
         super(brand, model, sizeEngine);
     }
 
     public void information() {
         System.out.println("Бренд легкогого автомобиля - " + brand + ", модель -  " + model + ", объем двигателя -  " + sizeEngine);
-
     }
 
     @Override
