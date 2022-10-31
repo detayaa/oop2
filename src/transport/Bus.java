@@ -1,8 +1,8 @@
 package transport;
 
-public class Bus extends Transport implements Competing{
+public class Bus extends Transport implements Competing {
     public Bus(String brand, String model, double sizeEngine) {
-        super(brand, model,sizeEngine );
+        super(brand, model, sizeEngine);
     }
 
     public void information() {

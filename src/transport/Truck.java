@@ -2,14 +2,15 @@ package transport;
 
 public class Truck extends Transport implements Competing {
     public Truck(String model, String brand, double sizeEngine) {
-        super(model,brand,sizeEngine);
+        super(model, brand, sizeEngine);
     }
+
     public void information() {
         System.out.println("Бренд грузового автомобиля - " + brand + ", модель -  " + model + ", обём двигателя " + sizeEngine);
     }
 
 
-        @Override
+    @Override
     public void go() {
         super.go();
     }

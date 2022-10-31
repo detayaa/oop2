@@ -6,9 +6,6 @@ public class Car extends Transport implements Competing {
     public static final String PIT_STOP = "PIT STOP";
 
 
-
-
-
     public Car(String brand, String model, double sizeEngine) {
         super(brand, model, sizeEngine);
     }
@@ -29,15 +26,11 @@ public class Car extends Transport implements Competing {
     }
 
 
-
     @Override
     public void pitStop() {
         System.out.println("Пит-Стоп");
 
     }
-
-
-
 
 
     @Override

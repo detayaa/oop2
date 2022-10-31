@@ -4,9 +4,9 @@ import java.sql.SQLOutput;
 
 public class Driver<B extends Transport & Competing> {
 
-    String name;
-    boolean license;
-    int experience;
+    private final String name;
+    private boolean license;
+    private final int experience;
 
     public Driver(String name, boolean license, int experience) {
         if (name != null && !name.isEmpty() && !name.isBlank()) {
@@ -25,13 +25,14 @@ public class Driver<B extends Transport & Competing> {
     public void start() {
         System.out.println("Начинаю движение");
     }
+
     public void stop() {
         System.out.println("Останавливаюсь");
     }
+
     public void refil() {
         System.out.println("Заправляюсь");
     }
-
 
 
     public void drive(B transport) {
