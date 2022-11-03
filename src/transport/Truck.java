@@ -35,7 +35,7 @@ public class Truck extends Transport implements Competing {
     }
 
     public void information() {
-        System.out.println("Бренд грузового автомобиля - " + brand + ", модель -  " + model + ", обём двигателя " + sizeEngine + ", тип грузоподъемности - " );
+        System.out.println("Бренд грузового автомобиля - " + brand + ", модель -  " + model + ", обём двигателя " + sizeEngine + ", тип грузоподъемности - " + Arrays.toString(LoadCapacity.values()));
     }
 
 
