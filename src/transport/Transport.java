@@ -25,6 +25,9 @@ public abstract class Transport {
         }
     }
 
+    public void printType() {
+        System.out.println("Тип - ");
+    }
 
     public void go() {
         System.out.println("Начать");

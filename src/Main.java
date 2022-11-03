@@ -43,22 +43,22 @@ public class Main {
         paz.maxSpeed();
         paz.bestTime();
         paz.pitStop();
-        Truck mercedes = new Truck("Mercedes Benz", "Actros", 15.6);
+        Truck mercedes = new Truck("Mercedes Benz", "Actros", 15.6, Truck.LoadCapacity.N1);
         mercedes.information();
         mercedes.maxSpeed();
         mercedes.bestTime();
         mercedes.pitStop();
-        Truck man = new Truck("Man", "TGX", 12.4);
+        Truck man = new Truck("Man", "TGX", 12.4, Truck.LoadCapacity.N2);
         man.information();
         man.maxSpeed();
         man.bestTime();
         man.pitStop();
-        Truck scania = new Truck("Scania", "Super", 13);
+        Truck scania = new Truck("Scania", "Super", 13, Truck.LoadCapacity.N3);
         scania.information();
         scania.maxSpeed();
         scania.bestTime();
         scania.pitStop();
-        Truck tatra = new Truck("Tatra", "T163", 13);
+        Truck tatra = new Truck("Tatra", "T163", 13, Truck.LoadCapacity.N2);
         tatra.information();
         tatra.maxSpeed();
         tatra.bestTime();
@@ -82,6 +82,24 @@ public class Main {
         harry.start();
         harry.stop();
         harry.refil();
+
+        scania.printType(Truck.LoadCapacity.N1);
+        mercedes.printType(Truck.LoadCapacity.N2);
+        tatra.printType(Truck.LoadCapacity.N3);
+
+        paz.printType(Bus.Capacity.SMALL);
+        maz.printType(Bus.Capacity.BIG);
+        neman.printType(Bus.Capacity.ESPECIALLY_SMALL);
+
+        ferrari.go(Car.Body.VAN);
+        kia.go(Car.Body.MINIVAN);
+        honda.go(Car.Body.HATCHBACK);
+
+
+
+
+
+
 
 
     }

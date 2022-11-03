@@ -1,14 +1,60 @@
 package transport;
 
+import javax.swing.text.html.HTMLDocument;
+import java.util.Arrays;
+import java.util.Iterator;
+
 public class Truck extends Transport implements Competing {
-    public Truck(String model, String brand, double sizeEngine) {
+
+    String capacity;
+    public enum LoadCapacity{
+        N1(0,3.5),N2(3.5,12),N3(12,100);
+        double maxWeight;
+        double minWeight;
+
+        LoadCapacity(double minWeight, double maxWeight) {
+            if (maxWeight != 0) {
+                this.maxWeight = maxWeight;
+            }
+            if (minWeight != 0) {
+                this.minWeight = minWeight;
+            }
+        }
+
+
+        public double getMaxWeight() {
+            return maxWeight;
+        }
+
+        public double getMinWeight() {
+            return minWeight;
+        }
+    }
+    public Truck(String model, String brand, double sizeEngine, LoadCapacity loadCapacity) {
         super(model, brand, sizeEngine);
     }
 
     public void information() {
-        System.out.println("Бренд грузового автомобиля - " + brand + ", модель -  " + model + ", обём двигателя " + sizeEngine);
+        System.out.println("Бренд грузового автомобиля - " + brand + ", модель -  " + model + ", обём двигателя " + sizeEngine + ", тип грузоподъемности - " );
     }
 
+
+
+    public void printType(LoadCapacity loadCapacity){
+        switch (loadCapacity){
+            case N1:
+                System.out.println(brand + ", грузоподъемность от " + loadCapacity.minWeight + " до " + loadCapacity.maxWeight);
+                break;
+            case N2:
+                System.out.println(brand + ", грузоподъемность от " + loadCapacity.minWeight + " до " + loadCapacity.maxWeight);
+                break;
+            case N3:
+                System.out.println(brand + ", грузоподъемность от " + loadCapacity.minWeight + " до " + loadCapacity.maxWeight);
+                break;
+        }
+
+
+    }
 
     @Override
     public void go() {

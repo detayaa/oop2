@@ -2,6 +2,9 @@ package transport;
 
 
 public class Car extends Transport implements Competing {
+
+    public enum Body {SEDAN, HATCHBACK, COUPE, UNIVERSAL, SUV, CROSSOVER, PICKUP, VAN, MINIVAN}
+
     public Car(String brand, String model, double sizeEngine) {
         super(brand, model, sizeEngine);
     }
@@ -10,9 +13,35 @@ public class Car extends Transport implements Competing {
         System.out.println("Бренд легкогого автомобиля - " + brand + ", модель -  " + model + ", объем двигателя -  " + sizeEngine);
     }
 
-    @Override
-    public void go() {
-        super.go();
+
+    public void go(Body body) {
+        switch (body) {
+            case SUV:
+                System.out.println(brand + ", модель - " + body);
+                break;
+            case HATCHBACK:
+                System.out.println(brand + ", модель - " + body);
+                break;
+            case COUPE:
+                System.out.println(brand + ", модель - " + body);
+                break;
+            case CROSSOVER:
+                System.out.println(brand + ", модель - " + body);
+                break;
+            case UNIVERSAL:
+                System.out.println(brand + ", модель - " + body);
+                break;
+            case PICKUP:
+                System.out.println(brand + ", модель - " + body);
+                break;
+            case MINIVAN:
+                System.out.println(brand + ", модель - " + body);
+                break;
+            case VAN:
+                System.out.println(brand + ", модель - " + body);
+                break;
+        }
+
     }
 
     @Override
@@ -27,6 +56,10 @@ public class Car extends Transport implements Competing {
 
     }
 
+    @Override
+    public void printType() {
+        super.printType();
+    }
 
     @Override
     public void bestTime() {
