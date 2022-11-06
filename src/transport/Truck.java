@@ -1,8 +1,6 @@
 package transport;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.Arrays;
-import java.util.Iterator;
 
 public class Truck extends Transport implements Competing {
 
@@ -20,6 +18,7 @@ public class Truck extends Transport implements Competing {
                 this.minWeight = minWeight;
             }
         }
+
 
 
         public double getMaxWeight() {
@@ -53,6 +52,12 @@ public class Truck extends Transport implements Competing {
                 break;
         }
 
+
+    }
+
+    @Override
+    public boolean diagnostics() {
+        return Math.random() > 0.75;
 
     }
 

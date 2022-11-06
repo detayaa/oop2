@@ -4,7 +4,11 @@ public abstract class Transport {
     protected String brand;
     protected String model;
     protected double sizeEngine;
+    protected boolean diagnostic;
 
+    public boolean isDiagnostic() {
+        return diagnostic;
+    }
 
     public Transport(String brand, String model, double sizeEngine) {
         if (brand == null || brand.isEmpty()) {
@@ -28,6 +32,10 @@ public abstract class Transport {
     public void printType() {
         System.out.println("Тип - ");
     }
+
+    public abstract boolean diagnostics();
+
+
 
     public void go() {
         System.out.println("Начать");

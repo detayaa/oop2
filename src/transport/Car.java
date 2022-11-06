@@ -1,21 +1,22 @@
 package transport;
 
-
-import java.util.Arrays;
-
 public class Car extends Transport implements Competing {
 
     public enum Body {SEDAN, HATCHBACK, COUPE, UNIVERSAL, SUV, CROSSOVER, PICKUP, VAN, MINIVAN}
 
 
-    public Car(String brand, String model, double sizeEngine, Body body) {
+    public Car(String brand, String model, double sizeEngine) {
         super(brand, model, sizeEngine);
     }
 
     public void information() {
-        System.out.println("Бренд легкогого автомобиля - " + brand + ", модель -  " + model + ", объем двигателя -  " + sizeEngine + Arrays.toString(Body.values()));
+        System.out.println("Бренд легкогого автомобиля - " + brand + ", модель -  " + model + ", объем двигателя -  " + sizeEngine);
     }
 
+    @Override
+    public boolean diagnostics() {
+        return Math.random() > 0.7;
+    }
 
     public void go(Body body) {
         switch (body) {

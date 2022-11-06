@@ -3,32 +3,34 @@ import transport.*;
 
 public class Main {
     public static void main(String[] args) {
-        Car ferrari = new Car("Ferrari", "488", 3.9, Car.Body.MINIVAN);
+        Car ferrari = new Car("Ferrari", "488", 3.9);
         ferrari.information();
         ferrari.maxSpeed();
         ferrari.bestTime();
         ferrari.pitStop();
-        Car kia = new Car("Kia", "Sportage", 2, Car.Body.VAN);
+        ferrari.go(Car.Body.VAN);
+
+        Car kia = new Car("Kia", "Sportage", 2);
         kia.information();
         kia.maxSpeed();
         kia.bestTime();
         kia.pitStop();
-        Car honda = new Car("Honda", "CR-V", 2.4, Car.Body.SUV);
+        Car honda = new Car("Honda", "CR-V", 2.4);
         honda.information();
         honda.maxSpeed();
         honda.bestTime();
         honda.pitStop();
-        Car mazda = new Car("Mazda", "CX-5", 2, Car.Body.UNIVERSAL);
+        Car mazda = new Car("Mazda", "CX-5", 2);
         mazda.information();
         mazda.maxSpeed();
         mazda.bestTime();
         mazda.pitStop();
-        Bus maz = new Bus("Maz", "203", 6.37, Bus.Capacity.SMALL);
+                Bus maz = new Bus("Maz", "203", 6.37, Bus.Capacity.SMALL );
         maz.information();
         maz.maxSpeed();
         maz.bestTime();
         maz.pitStop();
-        Bus neman = new Bus("Neman", "4202", 3.0, Bus.Capacity.ESPECIALLY_SMALL);
+        Bus neman = new Bus("Neman", "4202", 3.0, Bus.Capacity.ESPECIALLY_SMALL );
         neman.information();
         neman.maxSpeed();
         neman.bestTime();
@@ -43,12 +45,12 @@ public class Main {
         paz.maxSpeed();
         paz.bestTime();
         paz.pitStop();
-        Truck mercedes = new Truck("Mercedes Benz", "Actros", 15.6, Truck.LoadCapacity.N1);
+        Truck mercedes = new Truck("Mercedes Benz", "Actros", 15.6, Truck.LoadCapacity.N1 );
         mercedes.information();
         mercedes.maxSpeed();
         mercedes.bestTime();
         mercedes.pitStop();
-        Truck man = new Truck("Man", "TGX", 12.4, Truck.LoadCapacity.N2);
+        Truck man = new Truck("Man", "TGX", 12.4, Truck.LoadCapacity.N1);
         man.information();
         man.maxSpeed();
         man.bestTime();
@@ -65,19 +67,21 @@ public class Main {
         tatra.pitStop();
 
 
-        Driver<Car> smith = new Driver<>("Smith", true, 5);
+        Driver<Car> smith = new Driver<>("Smith", "права есть", 5);
         smith.drive(kia);
         smith.start();
         smith.stop();
         smith.refil();
 
-        Driver<Bus> carl = new Driver<>("Carl", true, 3);
+
+
+        Driver<Bus> carl = new Driver<>("Carl", "права есть", 3);
         carl.drive(paz);
         carl.start();
         carl.start();
         carl.refil();
 
-        Driver<Truck> harry = new Driver<>("Harry", true, 6);
+        Driver<Truck> harry = new Driver<>("Harry"," " , 6);
         harry.drive(scania);
         harry.start();
         harry.stop();
@@ -91,18 +95,48 @@ public class Main {
         maz.printType(Bus.Capacity.BIG);
         neman.printType(Bus.Capacity.ESPECIALLY_SMALL);
 
-        ferrari.go(Car.Body.VAN);
+
         kia.go(Car.Body.MINIVAN);
         honda.go(Car.Body.HATCHBACK);
 
+        diagnostics(honda,kia,ferrari,scania,neman,mercedes,man,maz, mazda,paz);
 
-
-
-
+        System.out.println(check("OQWE1234_", "123ertgfdv", "123ertgfdv"));
 
 
 
     }
+    public static boolean check(String login, String password, String confirmPassword) {
+        try {
+            return Data.check(login, password, confirmPassword);
+        } catch (WrongLoginException e) {
+            System.out.println("Ошибка при валидации логина: " + e.getMessage());
+            return false;
+        } catch (WrongPasswordException e) {
+            System.out.println("Ошибка при валидации пароля" + e.getMessage());
+            return false;
+        }
+    }
+
+
+
+    private static void diagnostics(Transport... transports) {
+        for (Transport transport : transports) {
+            diagnosticsTransport(transport);
+        }
+    }
+    private static void diagnosticsTransport(Transport transport) {
+        try {
+            if (!transport.diagnostics()) {
+                throw new RuntimeException("Автомобиль " + transport.getBrand() + " не прошел диагностику");
+            }
+        } catch (RuntimeException e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+
 
 
 }
