@@ -29,12 +29,12 @@ public class Truck extends Transport implements Competing {
             return minWeight;
         }
     }
-    public Truck(String model, String brand, double sizeEngine, LoadCapacity loadCapacity) {
+    public Truck(String model, String brand, double sizeEngine) {
         super(model, brand, sizeEngine);
     }
 
     public void information() {
-        System.out.println("Бренд грузового автомобиля - " + brand + ", модель -  " + model + ", обём двигателя " + sizeEngine + ", тип грузоподъемности - " + Arrays.toString(LoadCapacity.values()));
+        System.out.println("Бренд грузового автомобиля - " + brand + ", модель -  " + model + ", обём двигателя " + sizeEngine);
     }
 
 

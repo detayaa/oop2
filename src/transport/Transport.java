@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.ArrayList;
+
 public abstract class Transport {
     protected String brand;
     protected String model;
@@ -28,6 +30,9 @@ public abstract class Transport {
             this.sizeEngine = 3;
         }
     }
+
+
+
 
     public void printType() {
         System.out.println("Тип - ");

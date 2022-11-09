@@ -3,8 +3,7 @@ package transport;
 import java.util.Objects;
 
 public class Data {
-    int max;
-    int min;
+
     private static final String INVALID_LENGTH = "Длина может быть от 1 до 20";
     private static final String INVALID_SYMBOL = "Строка может содержать только латинские буквы, цифры и знак подчеркивания";
     private static final String PASSWORD_NOT_MATCH = "Пароль и подтверждение не совпадают";

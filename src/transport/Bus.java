@@ -22,12 +22,12 @@ public class Bus extends Transport implements Competing {
             return minCapacity;
         }
     }
-    public Bus(String brand, String model, double sizeEngine, Capacity capacity) {
+    public Bus(String brand, String model, double sizeEngine) {
         super(brand, model, sizeEngine);
     }
 
     public void information() {
-        System.out.println("Марка автобуса - " + brand + ", модель - " + model + ", объем двигателя - " + sizeEngine + Arrays.toString(Capacity.values()));
+        System.out.println("Марка автобуса - " + brand + ", модель - " + model + ", объем двигателя - " + sizeEngine);
     }
 
 
