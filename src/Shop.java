@@ -11,7 +11,7 @@ public class Shop <T> extends LinkedList<T> {
 
     @Override
     public boolean add(T e) {
-        if(size() >= capacity)
+        if (size() >= capacity)
             removeFirst();
         return super.add(e);
     }

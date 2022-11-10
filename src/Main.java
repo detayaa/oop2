@@ -239,7 +239,7 @@ public class Main {
         queue1.add("2");
         queue1.add("3");
 
-        for (int i = 10; i > 0; i--) {
+        for (int i = 5; i > 0; i--) {
             if (queue1.size() < queue.size()) {
                 queue1.add(Arrays.toString("i".toCharArray()));
             } else if (queue.size() < queue1.size() ) {
@@ -253,6 +253,19 @@ public class Main {
 
         System.out.println(queue1);
         System.out.println(queue);
+
+        for (int i=0; i < queue1.size(); i++){
+            System.out.println(queue1.poll());
+        }
+
+        for (int i=0; i < queue.size(); i++){
+            System.out.println(queue.poll());
+        }
+
+
+
+
+
 
     }
 
