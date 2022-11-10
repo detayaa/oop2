@@ -1,8 +1,7 @@
 import transport.*;
 
 import java.util.ArrayList;
-import java.util.Objects;
-//import transport.Train;
+
 
 public class Main {
     public static void main(String[] args) {

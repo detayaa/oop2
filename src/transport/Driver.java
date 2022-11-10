@@ -1,7 +1,5 @@
 package transport;
 
-import java.sql.SQLOutput;
-
 public class Driver<B extends Transport & Competing> {
 
     private final String name;

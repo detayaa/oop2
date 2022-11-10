@@ -1,11 +1,10 @@
 import transport.Transport;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class ServiceStation <L extends Transport> {
-    private Queue<L> queue = new LinkedList<>();
+    private final Queue<L> queue = new LinkedList<>();
 
     public void addCar(L transport) {
         queue.offer(transport);
