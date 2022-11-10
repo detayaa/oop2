@@ -1,6 +1,6 @@
 import transport.*;
 
-import java.util.ArrayList;
+import java.util.*;
 
 
 public class Main {
@@ -231,7 +231,28 @@ public class Main {
 
         service.service();
 
+        Shop<String> queue = new Shop<>(5);
+        queue.add("1");
+        queue.add("2");
+        Shop<String> queue1 = new Shop<>(5);
+        queue1.add("1");
+        queue1.add("2");
+        queue1.add("3");
 
+        for (int i = 10; i > 0; i--) {
+            if (queue1.size() < queue.size()) {
+                queue1.add(Arrays.toString("i".toCharArray()));
+            } else if (queue.size() < queue1.size() ) {
+                queue.add(Arrays.toString("i".toCharArray()));
+            } else if (queue.size() == queue1.size()) {
+                queue.add(Arrays.toString("i".toCharArray()));
+            } else {
+                System.out.println("Позовите Галю");
+            }
+        }
+
+        System.out.println(queue1);
+        System.out.println(queue);
 
     }
 
