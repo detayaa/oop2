@@ -1,6 +1,7 @@
 import transport.*;
 
 import java.util.ArrayList;
+import java.util.Objects;
 //import transport.Train;
 
 public class Main {
@@ -219,6 +220,18 @@ public class Main {
         allCar.add(scania);
         allCar.add(mercedes);
         allCar.add(volvo);
+
+        ServiceStation<Transport> service = new ServiceStation<>();
+        service.addCar(ferrari);
+        service.addCar(man);
+        service.addCar(maz);
+        service.addCar(mazda);
+        service.addCar(honda);
+        service.addCar(mercedes);
+        service.addCar(kia);
+
+        service.service();
+
 
 
     }
