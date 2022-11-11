@@ -231,42 +231,72 @@ public class Main {
 
         service.service();
 
-        Shop<String> queue = new Shop<>(5);
-        queue.add("1");
-        queue.add("2");
-        Shop<String> queue1 = new Shop<>(5);
-        queue1.add("1");
-        queue1.add("2");
-        queue1.add("3");
+        Queue<String> queue1 = new ArrayDeque<>();
+        Queue<String> queue2 = new ArrayDeque<>();
 
-        for (int i = 5; i > 0; i--) {
-            if (queue1.size() < queue.size()) {
-                queue1.add(Arrays.toString("i".toCharArray()));
-            } else if (queue.size() < queue1.size() ) {
-                queue.add(Arrays.toString("i".toCharArray()));
-            } else if (queue.size() == queue1.size()) {
-                queue.add(Arrays.toString("i".toCharArray()));
-            } else {
-                System.out.println("Позовите Галю");
-            }
+        randomFilling(queue1);
+        randomFilling(queue2);
+
+        System.out.println("Первая очередь " + queue1);
+        System.out.println("Вторая очередь " + queue2);
+
+        add("Max",queue1,queue2);
+        System.out.println("Первая очередь " + queue1);
+        System.out.println("Вторая очередь " + queue2);
+
+        add("Igor",queue1,queue2);
+        System.out.println("Первая очередь " + queue1);
+        System.out.println("Вторая очередь " + queue2);
+
+        remove(queue1,queue2);
+        System.out.println("Первая очередь " + queue1);
+        System.out.println("Вторая очередь " + queue2);
+
+        example();
+
+    }
+
+
+
+    private static void add(String name, Queue<String> queue1, Queue<String> queue2) {
+        if (queue1.size() < queue2.size() && queue2.size() != MAX_SIZE) {
+            queue1.offer(name);
+        } else if (queue2.size() < queue1.size() && queue1.size() != MAX_SIZE) {
+            queue2.offer(name);
+        } else {
+            System.out.println("Позовите Галю");
+        }
+    }
+
+    private static void remove(Queue<String> queue1, Queue<String> queue2) {
+        if (RANDOM.nextBoolean()) {
+            queue1.poll();
+        } else {
+            queue2.poll();
         }
 
-        System.out.println(queue1);
-        System.out.println(queue);
 
-        for (int i=0; i < queue1.size(); i++){
-            System.out.println(queue1.poll());
+    }
+
+    private static final List<String> NAMES = List.of(
+            "Ivan",
+            "Petr",
+            "Anton",
+            "Alex",
+            "Sasha",
+            "Roma",
+            "Nadya",
+            "Gennadiy"
+    );
+    private static final int MAX_SIZE = 5;
+
+    private static Random RANDOM = new Random();
+    private static void randomFilling(Queue<String> queue) {
+        int size = RANDOM.nextInt(MAX_SIZE + 1);
+        for (int i = 0; i < size; i++) {
+            queue.offer(NAMES.get(RANDOM.nextInt(NAMES.size())));
+
         }
-
-        for (int i=0; i < queue.size(); i++){
-            System.out.println(queue.poll());
-        }
-
-
-
-
-
-
     }
 
     public static boolean check(String login, String password, String confirmPassword) {
@@ -295,6 +325,21 @@ public class Main {
             }
         } catch (RuntimeException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    private static void example() {
+        List<List<String>> biDemArrList = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            biDemArrList.add(i, new ArrayList<>());
+            for (int j = 0; j < 8; j++) {
+                biDemArrList.get(i).add(j, ((i + j) % 2 == 1 ? "●" : "◯"));
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(biDemArrList.get(i).get(j) + " ");
+            }
         }
     }
 
