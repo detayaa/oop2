@@ -205,7 +205,7 @@ public class Main {
 
         System.out.println(check("OQWE1234_", "123ertgfdv", "123ertgfdv"));
 
-        ArrayList<Object> allCar = new ArrayList<>();
+        Set<Object> allCar = new HashSet<>();
         allCar.add(ferrari);
         allCar.add(kia);
         allCar.add(man);
